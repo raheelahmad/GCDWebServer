@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.4
 import PackageDescription
 
 let package = Package(
@@ -14,10 +14,11 @@ let package = Package(
                 .define("SWIFT_PACKAGE")
             ]
         ),
-        .target(
+            .target(
             name: "GCDWebUploader",
             dependencies: ["GCDWebServer"],
             path: "GCDWebUploader",
+            resources: [.process("Resources")],
             cSettings: [
                 .define("SWIFT_PACKAGE")
             ]
