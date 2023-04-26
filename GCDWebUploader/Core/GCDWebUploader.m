@@ -66,14 +66,12 @@ NS_ASSUME_NONNULL_END
 
 - (instancetype)initWithUploadDirectory:(NSString*)path {
   if ((self = [super init])) {
-    NSString* bundlePath = [[NSBundle bundleForClass:[GCDWebUploader class]] pathForResource:@"GCDWebUploader" ofType:@"bundle"];
-    if (bundlePath == nil) {
+      NSString* bundlePath = [SWIFTPM_MODULE_BUNDLE pathForResource:@"GCDWebUploader" ofType:@"bundle"];
+      if (bundlePath == nil) {
       return nil;
     }
-    NSBundle* siteBundle = [NSBundle bundleWithPath:bundlePath];
-    if (siteBundle == nil) {
-      return nil;
-    }
+      NSBundle* siteBundle = [NSBundle bundleWithPath:bundlePath];
+
     _uploadDirectory = [path copy];
     GCDWebUploader* __unsafe_unretained server = self;
 
