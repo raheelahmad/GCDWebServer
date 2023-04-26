@@ -4,8 +4,7 @@ import PackageDescription
 let package = Package(
     name: "GCDWebServer",
     products: [
-        .library(name: "GCDWebServer", targets: ["GCDWebServer"]),
-        .library(name: "GCDWebUploader", targets: ["GCDWebUploader"]),
+        .library(name: "GCDWebServer", targets: ["GCDWebServer", "GCDWebUploader"]),
     ],
     targets: [
         .target(
